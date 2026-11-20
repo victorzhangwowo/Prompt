@@ -1,0 +1,19 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# next.js & cloudflare build artifacts
+/.next/
+/out/
+/.vercel/
+/.wrangler/
+
+# misc
+.DS_Store
+*.pem
+npm-debug.log*
+
+# local env files
+.env*.local
+.dev.vars
