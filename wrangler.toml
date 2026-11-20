@@ -3,15 +3,8 @@ compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 
-# Cloudflare KV: 存储所有提示词 Markdown (.md) 与目录树
-# 本地开发会自动模拟持久化在 .wrangler/state/ 下；
-# 部署到 Cloudflare Pages 时请在控制台 Settings -> Functions -> Bindings 绑定同名 KV
-[[kv_namespaces]]
-binding = "PROMPTS_KV"
-id = "local-dev-prompts-kv"
-
-# Cloudflare R2: 存储封面图、原图与视频素材
-# 部署到 Cloudflare Pages 时请在控制台 Settings -> Functions -> Bindings 绑定同名 R2 Bucket
-[[r2_buckets]]
-binding = "MEDIA_BUCKET"
-bucket_name = "myprompt-media"
+# 说明：
+# 在 Cloudflare Pages 控制台部署时，请直接在 Settings -> Bindings 界面绑定：
+#   1. KV Namespace: 变量名 PROMPTS_KV
+#   2. R2 Bucket:    变量名 MEDIA_BUCKET
+# （此处不写死占位符 id，避免 Cloudflare Pages 锁定控制台绑定或报 namespace not found）
